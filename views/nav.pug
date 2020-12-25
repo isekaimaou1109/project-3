@@ -1,0 +1,16 @@
+.nav
+  .left
+    a(href="/").logo
+    span.btn-business= t('home.title_button')
+  
+  pre 
+    i.fas.fa-globe
+    span(style="margin-left:5px") #{lang}
+
+  .right
+    span.register= t('home.user_register')
+    span.login= t('home.login')
+  span#dropdown 
+    i.fas.fa-bars
+
+  block navbar

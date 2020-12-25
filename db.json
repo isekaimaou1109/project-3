@@ -1,0 +1,13 @@
+[
+  {
+    "id":1,
+    "username":"yoki",
+    "password":"123",
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA4ODIyNzgxLCJleHAiOjE2MDg5MDkxODF9.bfzGwUER5MSyUOKVSePnAJlxjpzdm_Gw99O1_GVdqEk"
+  },
+  {
+    "id":2,
+    "username":"kiyo",
+    "password":"1234"
+  }
+]
