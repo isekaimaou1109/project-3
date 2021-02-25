@@ -1,1 +1,2 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+This is a project as mega but fake app. not using in commercial
+if using this project (not commercial), please give me a star first 
