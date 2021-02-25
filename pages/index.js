@@ -1,8 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from 'next/router'
 
 import styles from '../styles/index.module.scss'
 import Header from "../components/header.js"
+import Nav from '../components/nav.js'
+import Container from '../components/layout.js'
 
 const items = [
   { 
@@ -118,35 +121,18 @@ const evalutions = [
 ];
 
 export default function Index() {
+  const router = useRouter()
+
   return (
     <>
-      <Header title="Trang chủ" />
-      <div className={styles.container}>
-        <nav id={styles.nav}>
-          <div id={styles.left}>
-            <Image src="/images/mega_icon.jpg" width="42px" height="42px" style={{ alignSelf: "center" }} alt="mega_icon" />
-            <div className={styles["mega-btn"]}>MEGA for Business</div>
-          </div>
-          <div id={styles.right}>
-            <h4 style={{ margin:0, alignSelf:"center" }}>
-              <i style={{ fontSize:"18px" }} className="fas fa-globe"></i>{" "}
-              <span>EN</span>
-            </h4>
-            <div id={styles["btn-wrap"]}>
-              <div className={`${styles["mega-btn"]} ${styles["mega-signup-btn"]}`}>Create Account</div>
-              <div className={`${styles["mega-btn"]}  ${styles["mega-login-btn"]}`}>Login</div>
-            </div>
-            <div id={styles.sidebar}>
-              <i className="fas fa-bars"></i>
-            </div>
-          </div>
-        </nav>
+      <Container title="Trang chủ">
+        <Nav />
         <script src="/javascripts/navbar-trackdown.js"></script>
         <div className={styles.homepage}>
           <p className="title-homepage" style={{ fontSize:'32px', width:"700px", lineHeight: 1.5 }}>
             Secure Cloud Storage and Communication. Privacy by Design.</p>
           <p className="desc">Create a MEGA account to get <strong>50 GB FREE*</strong> storage</p>
-          <button className={styles.btn}><a>Create Account</a></button>
+          <button className={styles.btn} onClick={() => router.push("/register")}><a>Create Account</a></button>
           <img src="/images/mega-cloud.jpg" style={{ width:"80vw", WebkitUserDrag: "none" }} />
           <h6 style={{ color: "#888" }}>*Subject to your participation in our achievements program.</h6>
         </div>
@@ -280,7 +266,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
       <script src="/javascripts/sidebar.js"></script>
       <script src="/javascripts/hidden.js"></script>
       <script src="/javascripts/dropdown.js"></script>
