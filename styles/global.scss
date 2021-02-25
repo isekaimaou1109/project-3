@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+
+  p {margin:0!important;}
+  * {font-family: 'Montserrat', sans-serif;}
+  *::selection {background-color: #888;color:#fff;
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: red; 
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }
+
+  @media only screen and (max-width: 600px) {
+    #navbar {
+      #right {
+        width: fit-content;
+        .signup-wrap {display: none;user-select: none;}
+
+        *:nth-child(3)::before {
+          content: none;
+        }
+      }
+    }
+  }
+}
+
+// @media only screen and (max-width: 768px) {
+//   #navbar {
+//     #right {
+//       width: 200px;
+//       span.lang-wrap {display: none;user-select: none;}
+//     }
+//   }
+
+//   .container .introduce .box {
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//   }
+
+//   .container {
+//     .homepage {
+//       * {margin-top: 10px!important;}
+//     }
+
+//     .introduce {
+//       .box {
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+
+//         .right {width:80%!important;}
+//         .left {width:100%!important;}
+
+//         .wrap {
+//           display: grid;
+//           grid-template-columns: 1fr;
+//           grid-row-gap: 30px;
+//           grid-template-rows: auto;
+
+//           img {width:260px;}
+//           img:nth-child(2n+1) {border:1px solid #e7e6e1;margin:0;}
+//         }
+//       }
+//     }
+//   }
+
+//   #footer {
+//     div#col-1 {
+//       div#wrap-col-1 {
+//         text-align: center;
+//         width: 40%;
+//         display: grid;
+//         grid-template-rows: 1fr 1fr;
+//         grid-template-columns: 1fr 1fr;
+//         grid-row-gap: 10px;
+//       }
+//     }
+//   }
+}
