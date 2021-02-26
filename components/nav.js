@@ -19,7 +19,7 @@ export default function Nav(props) {
             <span>EN</span>
           </h4>
           <div id={styles["btn-wrap"]}>
-            <div onClick={() => router.push("/register")} className={`${styles["mega-btn"]} ${styles["mega-signup-btn"]}`}>Create Account</div>
+            {router.pathname === "/register" || <div onClick={() => router.push("/register")} className={`${styles["mega-btn"]} ${styles["mega-signup-btn"]}`}>Create Account</div>}
             {router.pathname === "/login" || <div onClick={(e) => router.push("/login")} className={`${styles["mega-btn"]}  ${styles["mega-login-btn"]}`}>Login</div>}
           </div>
           <div id={styles.sidebar}>
@@ -27,7 +27,6 @@ export default function Nav(props) {
           </div>
         </div>
       </nav>
-      <script src="/javascripts/popup.js"></script>
     </>
   )
 }

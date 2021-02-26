@@ -30,3 +30,5 @@ yarn-error.log*
 .env.production.local
 
 private.key
+isekai_build/
+isekai_build/*
