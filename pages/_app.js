@@ -3,52 +3,38 @@ import '../styles/global.scss'
 import { useState, useEffect, createContext } from 'react'
 import Cookies from 'js-cookie'
 import { v4 as uuidv4 } from "uuid"
+// import { Sequelize, QueryTypes } from 'sequelize'
 
 export const AppContext = createContext()
 
 export default function App({ Component, pageProps }) {
-  const [user, setUser] = useState({ token: Cookies.get("token") || "", username: "" })
+  const [user, setUser] = useState({ username: "anonymous", password: "", email: "" })
 
-  useEffect(() => {
-    if(!user.token) {
-      setUser({ token: Cookies.set("token", uuidv4()) })
-    }
-  })
+  Cookies.set("token", uuidv4(), { path: "/" })
 
-
-//   let userId = localStorage.getItem("userID") || uuidv4() 
-//   const privateKey = readFileSync(`${process.cwd()}\\private.key`);
-//   const token = sign({ userID: userId }, privateKey, { algorithm: 'RS256' });
-
-  const logout = function(change) {
-    Cookies.remove("token")
-    change({ token: uuidv4(), username: "anonymous" })
+  if(Cookies.get("token", { path: "/" })) {
+    fetch(`http://localhost:3000/api/${Cookies.get("token", { path: "/" })}`, {
+      method: "GET",
+      credentials: "same-origin"
+    }).then(client => client.json())
+      .then(data => {
+        data.forEach(item => {
+          if(item.tokenId == Cookies.get("token",{path:"/"})) {
+            setUser({ username: item.firstname, password: item.password, email: item.email })
+          }
+        })
+      })
+      .catch(e => console.error(e))
   }
 
   return (
     <AppContext.Provider 
       value={{
-        onLogin: setUser,
-        onLogout: logout,
-        userInfo: user
+        username: user,
+        onSetUser: setUser
       }}
     >
       <Component  {...pageProps} />
     </AppContext.Provider>
   )
 } 
-
-
-// export async function getServerSideProps(context) {
-  // let userId = localStorage.getItem("userID") || uuidv4() 
-  // const privateKey = readFileSync(`${process.cwd()}\\private.key`);
-  // const token = sign({ userID: userId }, privateKey, { algorithm: 'RS256' });
-  
-  
-
-//   return {
-//     props: {
-//       userID: token
-//     }, 
-//   }
-// }

@@ -1,12 +1,12 @@
 const dropZone = document.querySelector('#dashboard_drag-zone__3fotn');
 const filelist = document.querySelector('#dashboard_filelist__1a9Zu');
-let container = []
 
 const traverseFileTree = function(item, path = "") {
   if (item.isFile) {
     // Get file
     item.file(function(file) {
       console.log(file)
+
       var li = document.createElement('li');
       li.innerText = path + file.name;
       filelist.appendChild(li);
@@ -15,7 +15,6 @@ const traverseFileTree = function(item, path = "") {
     // Get folder contents
     var dirReader = item.createReader();
     dirReader.readEntries(function(entries) {
-      console.log(entries)
       for (var i = 0; i < entries.length; i++) {
         traverseFileTree(entries[i], path + item.name + "/");
       }

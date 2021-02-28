@@ -7,8 +7,12 @@ import signup from '../styles/signup.module.scss'
 import { useState, useCallback } from 'react'
 import Link from 'next/link'
 import { v4 as uuidv4 } from 'uuid'
+import { useRouter } from 'next/router'
+import Cookies from 'js-cookie'
 
 export default function Login(props) {
+  const router = useRouter()
+
   const [firstname, setFirstName] = useState("")
   const [lastname, setLastName] = useState("")
   const [email, setEmail] = useState("")
@@ -53,11 +57,10 @@ export default function Login(props) {
     }
   }
 
-//action={`/api/post?register-session=${uuidv4()}`}
   return (
     <Container title="Register Page">
       <Nav />
-        <form action={`/api/post/${uuidv4()}`} method="POST">
+        <form action={`http://localhost:3000/api/post/${Cookies.get('token')}`} method="POST">
           <div className={styles["login-container"]}>
             <div className={styles["login"]} style={{ width:"500px", gridTemplateRows:"100px auto 50px", height:"100%" }}>
               <p className={styles["header"]}>Create your <span style={{ color:"red" }}>free</span> account</p>
@@ -67,15 +70,15 @@ export default function Login(props) {
                 <input name="lastname" className={signup["signup-info"]} type="text" placeholder="Last name" value={lastname} onChange={(e) => setLastName(e.target.value)} />
                 <input name="email" className={signup["signup-info"]} type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input name="password" className={signup["signup-info"]} type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                <input name="passwordconfirm" className={signup["signup-info"]} type="password" placeholder="RETYPE-Password" value={retypepassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                <input name="retypepassword" className={signup["signup-info"]} type="password" placeholder="RETYPE-Password" value={retypepassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                 
                 <div style={{ fontSize:"13px",lineHeight:2,width:"calc(100% / 1.2)",paddingTop:"10px" }}>
-                  <input type="checkbox" value={privacy} onChange={() => setPrivacy(!privacy)}  />
+                  <input name="privacy" type="checkbox" value={privacy} onChange={() => setPrivacy(!privacy)}  />
                   {/* onChange={(e) => setForm({ privacyTick: e.target.value })} */}
                   <label>I understand that if I lose my password, I may lose my data. Read more about <Link href="#">MEGA’s end-to-end encryption.</Link></label>
                 </div>
                 <div style={{ fontSize:"13px",lineHeight:2,width:"calc(100% / 1.2)",paddingTop:"10px" }}>
-                  <input type="checkbox" value={agree} onChange={() => setAgree(!agree)} />
+                  <input name="agree" type="checkbox" value={agree} onChange={() => setAgree(!agree)} />
                   {/* onChange={(e) => setForm({ argreepolicyTick: e.target.value })} */}
                   <label>I agree with the MEGA <Link href="#">Terms of Service</Link></label>
                 </div>
@@ -103,7 +106,6 @@ export default function Login(props) {
 }
 
 export async function getServerSideProps() {
-  
   return {
     props: {}
   }

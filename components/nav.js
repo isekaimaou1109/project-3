@@ -1,10 +1,12 @@
 import Image from "next/image"
 import styles from '../styles/index.module.scss'
 import { useRouter } from 'next/router'
-
+import { AppContext } from '../pages/_app.js'
+import { useContext } from 'react'
 
 export default function Nav(props) {
   const router = useRouter()
+  const context = useContext(AppContext)
 
   return (
     <>
@@ -20,7 +22,7 @@ export default function Nav(props) {
           </h4>
           <div id={styles["btn-wrap"]}>
             {router.pathname === "/register" || <div onClick={() => router.push("/register")} className={`${styles["mega-btn"]} ${styles["mega-signup-btn"]}`}>Create Account</div>}
-            {router.pathname === "/login" || <div onClick={(e) => router.push("/login")} className={`${styles["mega-btn"]}  ${styles["mega-login-btn"]}`}>Login</div>}
+            {(router.pathname === "/login" || context.username.username !== "anonymous") ? <></> : <div onClick={(e) => router.push("/login")} className={`${styles["mega-btn"]}  ${styles["mega-login-btn"]}`}>Login</div>}
           </div>
           <div id={styles.sidebar}>
             <i className="fas fa-bars"></i>

@@ -29,6 +29,9 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-private.key
-isekai_build/
-isekai_build/*
+/private.key
+/isekai_build/
+/isekai_build/**
+
+
+
