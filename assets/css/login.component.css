@@ -1,0 +1,78 @@
+#login-box {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border: 1px solid #8888;
+  border-radius: 10px;
+  height: 600px;
+}
+
+#login-box > .item-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;	
+  position: relative;
+}
+
+#login-box > .item-box > .item-cover {
+  background-color: #2222;
+  border-radius: 50px;
+  width: 350px;
+  padding: 10px;
+  margin: 20px 0px;
+}
+
+@keyframes boomalittle {
+0% {
+  box-shadow: 0px 0px 0px 0px #57b846;
+}
+
+100% {
+  box-shadow: 0px 0px 20px 20px transparent;
+}
+}
+
+#login-box > .item-box > .item-cover:focus-within,
+#login-box > .item-box > .item-cover:focus {
+  animation-name: boomalittle;
+  animation-duration: .5s;
+}
+
+::-webkit-input-placeholder {
+  color: transparent;
+}
+
+#login-box > .item-box > .item-cover > .input-btn,
+#login-box > .item-box > .input-btn {
+  outline: transparent;
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+}
+
+#login-box > .item-box > .button {
+  background-color: #57b846!important;
+  width: 370px;
+  border-radius: 50px;
+  padding: 10px 0px;
+  margin: 20px 0px;
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 0.5px 0.2px 0.8px #fff;
+  font-weight: bold;
+}
+
+#login-box > .item-box > .button:hover {
+  background: #333!important;
+}
+
+#login-box > .item-box > pre > a:hover {
+  color: #57b846;
+}
+
+#login-box > .item-box > span:hover > *,
+#login-box > .item-box > span:hover > * > * {
+  color: #57b846!important;
+  font-size: 15px;
+}
+

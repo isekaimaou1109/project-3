@@ -1,0 +1,26 @@
+extends ./header.pug
+
+block content
+  .form-container
+    #login-box
+      .item-box(style='perspective:300px;')
+        img#image-content(src='https://colorlib.com/etc/lf/Login_v1/images/img-01.png')
+      //form(method='POST' action='/')
+      .item-box
+        h1(style='text-shadow:0.8px 0.8px 0.8px black;text-align:center;') Member Login
+        .item-cover
+          i.far.fa-envelope(style='padding:10px;margin-left:10px;color:#888;')
+          input.input-btn(onfocus="if (this.value === 'Enter username...') this.value=''" title='enter username' size='20' maxlength='20' type='text' name='username' placeholder='username...')
+        .item-cover
+          i.fas.fa-lock(style='padding:10px;margin-left:10px;color:#888;')
+          input.input-btn(size='20' maxlength='20' type='password' name='password' placeholder='password...')
+        button.input-btn.button(type='button') LOGIN
+        pre.
+          \nForgot           
+        span(style='position:absolute;bottom:10px;')
+          a(href='#')
+            | Create Your Account 
+            i.fas.fa-long-arrow-alt-right
+  script(src="/public/js/image-position.js") 
+  
+
