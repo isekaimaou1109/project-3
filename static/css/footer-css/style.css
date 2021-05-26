@@ -1,0 +1,88 @@
+.footer {
+  padding: 50px 0px;
+  box-sizing: border-box;
+  background: var(--darkblue);
+}
+
+.footer .begin {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 60px;
+}
+
+.footer .begin .notice {
+  font-size: 48px;
+  color: var(--white);
+  user-select: none;
+}
+
+.footer .begin .letter-sent {
+  align-self: center;
+}
+
+.footer .begin .letter-sent #email {
+  border: 1px solid #e7e7e7;
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+}
+
+.footer .begin .letter-sent .btn {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e7e7e7;
+  background: var(--primary);
+  color: var(--white);
+  transform: translateX(-20px);
+}
+
+
+.footer .middle {
+  margin: 60px 0px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-column-gap: 30px;
+  padding: 0px 60px;
+}
+
+.footer .middle .item .title {
+  margin: 0;
+  color: var(--white);
+}
+
+.footer .middle .item .list-item {
+  padding: 0px 20px;
+  line-height: 2;
+}
+
+.footer .middle .item .list-item a {
+  color: var(--primary);
+  line-height: 2;
+  text-decoration: none;
+}
+
+.footer .middle .item .list-item li {color:var(--white);}
+
+.footer .middle .item .list-item a li span {color:var(--white);}
+
+.footer .middle .item:nth-child(1) .resize-image {
+  width: 96px;
+  height: 42px;
+}
+
+.footer .end {
+  border-top: 1px solid var(--white);
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--white);
+}
+
+.footer .end .icon-container * {
+  margin: 0px 10px;
+}
+
+

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block navCss %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar-css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/article-css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/detail-service-css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/process-css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/sos-css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/services-function-css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/pricing-css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/blog-css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/our-partners-css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/footer-css/style.css') }}">
+  <style>
+    .btn-scroll {
+      background: var(--primary);
+      border: none;
+      border-radius: 10px;
+      position: fixed;
+      color: var(--white);
+      right: 10px;
+      bottom: 10px;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+    }
+  </style>
+{% endblock %}
+{% block content %}
+  {% include 'components/navbar.html' %}
+  {% include 'components/content.html' %}
+  {% include 'components/detail-service.html' %}
+  {% include 'components/process.html' %}
+  {% include 'components/sos.html' %}
+  {% include 'components/services-function.html' %}
+  {% include 'components/pricing.html' %}
+  {% include 'components/button.html' %}
+  {% include 'components/blog.html' %}
+  {% include 'components/our-partners.html' %}
+  {% include 'components/footer.html' %}
+{% endblock %}

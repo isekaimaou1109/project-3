@@ -1,0 +1,96 @@
+#services-function {
+  display: flex;
+  flex-direction: column;
+}
+
+#services-function #title {
+  margin: 0;
+  margin-top: 100px;
+  font-size: 18px;
+  color: var(--blue);
+  width: fit-content;
+  padding: 5px 10px;
+  background: #e7e7e7;
+  border-radius: 10px;
+  align-self: center;
+}
+
+#services-function h1 {
+  text-align: center;
+  color: var(--darkblue);
+}
+
+#services-function #item-wrapper {
+  box-sizing: border-box;
+  background: url(/static/images/logo-spinner.png);
+  background-repeat: no-repeat;
+  background-position: calc(100% + 700px) 0px;
+  padding: 0px 100px;
+}
+
+#services-function #item-wrapper .item-function {
+  display: grid;
+  grid-template-columns: max-content auto;
+}
+
+#services-function #item-wrapper .item-function .item-left {
+  border: 1px solid #e7e7e7;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 1px #8888;
+  color: var(--gray-dark);
+  background: var(--white);
+}
+
+#services-function #item-wrapper .item-function .item-left .item-wrap {position:relative;}
+
+#services-function #item-wrapper .item-function .item-left .item-wrap .item {
+  width: 300px;
+  padding: 20px;
+}
+
+#services-function #item-wrapper .item-function .item-left .item-wrap .item:hover {
+  color: var(--primary);
+}
+
+#services-function #item-wrapper .item-function .item-left .item-wrap .item:before {
+  content: '';
+  height: 0;
+}
+
+#services-function #item-wrapper .item-function .item-left .item-wrap .item:hover:before {
+  content: "";
+  border: 2px solid var(--primary);
+  left: 0;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: height .5s;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#services-function #item-wrapper .item-function .item-right {
+  padding: 0px 50px;
+  color: #9a9797;
+  box-sizing: border-box;
+}
+
+#services-function #item-wrapper .item-function .item-right .policies {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-bottom: 20px;
+}
+
+#services-function #item-wrapper .item-function .item-right .policies p {margin:5px;}
+
+#services-function #item-wrapper .item-function .item-right .btn {
+  color: aliceblue;
+  border-radius: 10px;
+  border: none;
+  width: 100px;
+  align-self: center;
+  background: var(--primary);
+  height: 40px;
+  transition: background-color .8s,color .8s;
+  padding: 0;
+}

@@ -1,0 +1,52 @@
+.process {
+  margin-bottom: 50px;
+}
+
+.process-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.process-wrap .process-align {
+  display: flex;
+  width: calc((100% / 2) + 300px);
+}
+
+.process-wrap .process-align .process-item {
+  margin: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.process-wrap .process-align .process-item .process-illusion {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 150px;
+  border: 1px solid var(--primary);
+  height: 75px;
+  border-radius: 10px;
+}
+
+.process-wrap .process-align .process-item .process-illusion .resize-image {
+  height: inherit;
+  background: url('/static/images/process-1.png');
+  background-position: 10px 0px;
+}
+
+.process-wrap .process-align .process-item .process-illusion .num {
+  height: inherit;
+  border-radius: inherit;
+  background: var(--primary);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.process-wrap .process-align .process-item .process-illusion .num h1 {
+  margin: 0;
+  font-size: 24px;
+  color: var(--white);
+  height: inherit;
+  line-height: 3;
+  text-align: center;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <script src="{{ url_for('static', filename='bower_components/react/react.development.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/react/react-dom.development.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/Font-awesome/css/all.min.css') }}">
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    {% block navCss %}{% endblock %}
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <div id="app">
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+.sos {
+  background: var(--darkblue);
+  color: var(--white);
+  display: grid;
+  grid-template-columns: max-content auto;
+}
+
+.sos .sos-left {padding: 30px;}
+
+.sos .sos-left * {user-select:none;-webkit-highlight:none;}
+
+.sos-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sos .sos-right .btn {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  font-size: 16px;
+  transition: background .8s, color .8s;
+}
+
+.sos .sos-right .btn:nth-child(1) {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background: var(--white);
+}
+
+.sos .sos-right .btn:nth-child(2) {
+  border: 1px solid var(--primary);
+  color: var(--white);
+  background: var(--nocolor);
+}
+
+.sos .sos-right .btn:nth-child(1):hover {
+  color: var(--white);
+  background: var(--primary);
+}
+
+.sos .sos-right .btn:nth-child(2):hover {
+  background: var(--primary);
+}
+
