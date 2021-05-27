@@ -4,4 +4,3 @@ __pycache__
 package.json
 package-lock.json
 .bowerrc
-venv
